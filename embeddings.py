@@ -8,6 +8,9 @@ app = Flask(__name__)
 
 # Load the pre-trained transformer model
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+@app.route('/')
+def home():
+    return "Welcome to the Embeddings API!"
 
 def extract_text_from_pdf(file):
     """Extract text from a PDF file."""

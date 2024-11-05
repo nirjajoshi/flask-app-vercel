@@ -6,8 +6,9 @@ from io import BytesIO
 
 app = Flask(__name__)
 
-# Load the pre-trained transformer model
-model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+# Load a smaller pre-trained transformer model for sentence embeddings
+model = SentenceTransformer('sentence-transformers/distilbert-base-nli-stsb-mean-tokens')
+
 @app.route('/')
 def home():
     return "Welcome to the Embeddings API!"
